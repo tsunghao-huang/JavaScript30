@@ -77,3 +77,12 @@ progress.addEventListener('mouseup', () => mousedown=false);
 
 // full screen button
 fullScreenButton.addEventListener('click', handleFull)
+
+// trigger skip buttons by Arrow right and left.
+window.addEventListener('keyup', (e) => {
+    if (e.key == "ArrowRight") {
+        document.getElementById("forward").click();
+    } else if (e.key == "ArrowLeft") {
+        document.getElementById("backward").click();
+    }
+});
