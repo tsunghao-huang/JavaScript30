@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Understanding JavaScript's Capture</title>
+</head>
+
+<body class="bod">
+
+  <div class="one">
+    <div class="two">
+      <div class="three">
+      </div>
+    </div>
+  </div>
+
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    div {
+      width: 100%;
+      padding: 100px;
+    }
+
+    .one {
+      background: thistle;
+    }
+
+    .two {
+      background: mistyrose;
+    }
+
+    .three {
+      background: coral;
+    }
+  </style>
+    
+  <button>Click Me</button>
+  <script>
+    // check this https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#Event_bubbling_and_capture
+    const divs = document.querySelectorAll('div');
+    const button = document.querySelector('button');
+    
+    function logText(e) {
+      e.stopPropagation(); // stop bubbling!
+      console.log(this.classList.value);
+    }
+
+    divs.forEach(div => div.addEventListener('click', logText));
+
+    // can switch to capturing phase by setting the 3rh argument
+    // divs.forEach(div => div.addEventListener('click', logText, {
+    //   capture: true
+    // }));
+
+    button.addEventListener('click', () => {
+      console.log('click!');
+    }, {
+      once:true // can only be clicked once
+    });
+
+  </script>
+</body>
+
+</html>
