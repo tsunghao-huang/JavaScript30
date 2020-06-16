@@ -48,8 +48,9 @@
 
       // substract the margin
       startX = e.pageX - slider.offsetLeft;
+
+      // remember how much does the user scroll originally
       scrollLeft = slider.scrollLeft;
-      console.log(scrollLeft);
     });
     slider.addEventListener('mouseleave', () => {
       isDown = false;
@@ -61,10 +62,12 @@
     });
     slider.addEventListener('mousemove', (e) => {
       if(!isDown) return; //stop the fn from running
-      e.preventDefault(); 
+      e.preventDefault();
+
+      // continuously monitor the mouse's x coord
       const x = e.pageX - slider.offsetLeft;
       
-      // how far have the user moved compare to startX
+      // how far have the user moved compare to the startX
       const walk = (x - startX)*3;
       slider.scrollLeft = scrollLeft - walk;
     });
