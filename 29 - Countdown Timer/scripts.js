@@ -30,7 +30,7 @@ function timer(seconds) {
 function displayTImeLeft(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainderSeconds = seconds % 60;
-    const display = `${minutes}:${remainderSeconds < 10 ? '0': ''}${remainderSeconds}`;
+    const display = `${minutes}:${remainderSeconds < 10 ? '0':''}${remainderSeconds}`;
     timeDisplay.textContent = display;
 
     document.title = display;
@@ -42,7 +42,7 @@ function displayEndTime(timestamp) {
     const end = new Date(timestamp);
     const hour = end.getHours();
     const minutes = end.getMinutes();
-    endTime.textContent = `Be Back At ${hour}:${minutes}`;
+    endTime.textContent = `Be Back At ${hour}:${minutes < 10 ? '0':''}${minutes}`;
 }
 
 function startTimer() {
