@@ -34,7 +34,6 @@ function displayTImeLeft(seconds) {
     timeDisplay.textContent = display;
 
     document.title = display;
-    console.log(display);
 }
 
 function displayEndTime(timestamp) {
