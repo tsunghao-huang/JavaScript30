@@ -43,7 +43,7 @@
     let score = 0;
 
     function randomTime(min, max) {
-      return Math.round(Math.random() * (max -min) + min);
+      return Math.round(Math.random() * (max - min) + min);
     }
 
     function randomHole(holes) {
@@ -51,7 +51,7 @@
       const hole = holes[idx];
 
       // make sure the same hole does not pop up immediately
-      if(hole === lastHole) {
+      if (hole === lastHole) {
         return randomHole(holes);
       }
 
@@ -66,9 +66,9 @@
       setTimeout(() => {
         hole.classList.remove('up');
         // run indefinately
-        if(!timeUp) peep();
+        if (!timeUp) peep();
       }, time);
-    } 
+    }
 
     function startGame() {
       scoreBoard.textContent = 0;
@@ -81,7 +81,7 @@
     }
 
     function bank(e) {
-      if(!e.isTrusted) return // cheater!
+      if (!e.isTrusted) return // cheater!
       score++;
       this.classList.remove('up');
       scoreBoard.textContent = score;
