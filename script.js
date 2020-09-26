@@ -53,7 +53,7 @@ let gridContent = '';
 projects.forEach(pj => {
     gridContent += `
         <div class="project project-tile">
-            <img class="project-image" src="${pj.preview}" alt="${pj.title.slice(5)}" onerror="this.onerror=null;this.src='https://cdn.shopify.com/s/files/1/2523/8150/t/6/assets/no-image.svg?7539785654531808070';">
+            <img class="project-image" src="${pj.preview}" alt="preview image of ${pj.title.slice(5)}" onerror="this.onerror=null;this.src='./preview-not-available.png';">
             <p class="project-title">${pj.title}</p>
             <div class="demo-code-btns">
                 <a class="demo-btn" href="${pj.demo}" target="_blank">
