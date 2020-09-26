@@ -38,7 +38,7 @@ projects = projectTitles.map(title => {
         title: title,
         demo: `https://tsunghao-huang.github.io/JavaScript30/${title}`,
         code: `https://github.com/tsunghao-huang/JavaScript30/tree/master/${title}/`,
-        preview: `./${title}/preview.png`
+        preview: `https://raw.githubusercontent.com/tsunghao-huang/JavaScript30/master/${title}/preview.png`
     }
 });
 
